@@ -22,7 +22,7 @@
             users.Add(lockedUser);
 
             var userContextMock = new Mock<UsersContext>();
-            userContextMock.Setup(x => x.Users).ReturnsDbSet(users);
+            userContextMock.Setup(x => x.MockUsers).ReturnsDbSet(users);
 
             var usersService = new UsersService(userContextMock.Object);
 
@@ -42,7 +42,7 @@
             users.Add(lockedUser);
 
             var userContextMock = new Mock<UsersContext>();
-            userContextMock.Setup(x => x.Users).ReturnsDbSet(users);
+            userContextMock.Setup(x => x.MockUsers).ReturnsDbSet(users);
 
             var usersService = new UsersService(userContextMock.Object);
 
@@ -62,7 +62,7 @@
             roles.Add(disabledRole);
 
             var userContextMock = new Mock<UsersContext>();
-            userContextMock.Setup(x => x.Roles).ReturnsDbQuery(roles);
+            userContextMock.Setup(x => x.MockRoles).ReturnsDbSet(roles);
 
             var usersService = new UsersService(userContextMock.Object);
 
@@ -82,7 +82,7 @@
             roles.Add(disabledRole);
 
             var userContextMock = new Mock<UsersContext>();
-            userContextMock.Setup(x => x.Roles).ReturnsDbQuery(roles);
+            userContextMock.Setup(x => x.MockRoles).ReturnsDbSet(roles);
 
             var usersService = new UsersService(userContextMock.Object);
 
